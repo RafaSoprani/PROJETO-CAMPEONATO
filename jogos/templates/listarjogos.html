@@ -1,0 +1,19 @@
+{% extends "base.html"%}
+
+{% block app_content %}
+
+<a href="{{ url_for('jogos.create') }}" class="btn btn-default">Novo Jogo</a>
+<br>
+<br>
+<div class="container">
+	<ul class="list-unstyled row">
+        {% for jogos in jogo %}
+        <li class="list-group-item col-md-4 borderless text-center">
+        {{ jogos.jogo_mandante }}	
+        <a href="{{ url_for('jogo.update', id=jogos.id) }}">edit</a>
+             <a href="{{ url_for('jogo.delete', id=jogos.id) }}">delete</a>	
+		 </li>
+		{% endfor %}
+    </ul>
+</div>
+{% endblock %} 
