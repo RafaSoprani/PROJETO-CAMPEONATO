@@ -5,15 +5,26 @@
 <a href="{{ url_for('jogos.create') }}" class="btn btn-default">Novo Jogo</a>
 <br>
 <br>
-<div class="container">
-	<ul class="list-unstyled row">
-        {% for jogos in jogo %}
-        <li class="list-group-item col-md-4 borderless text-center">
-        {{ jogos.jogo_mandante }}	
-        <a href="{{ url_for('jogo.update', id=jogos.id) }}">edit</a>
-             <a href="{{ url_for('jogo.delete', id=jogos.id) }}">delete</a>	
-		 </li>
-		{% endfor %}
-    </ul>
-</div>
-{% endblock %} 
+<table class="table table-dark table-hover"> 
+    <thead>    
+    <tr>
+      <th>RODADA</th>
+      <th>TIME MANDANTE</th>
+      <th>GOLS</th>
+      <th>TIME VISITANTE</th>
+      <th>GOLS</th>
+    </tr>
+  </thead>  
+  <tbody id="Corpo"> 
+    {% for jogo in jogos %}
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+  {% endfor %}  
+</table>
+{% endblock %}

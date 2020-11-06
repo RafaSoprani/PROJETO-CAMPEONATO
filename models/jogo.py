@@ -15,6 +15,8 @@ class Jogo(db.Model):
     vermelhos_mandante = db.Column(db.Integer, default=0)
     vermelhos_visitante = db.Column(db.Integer, default=0)
     uix_1 = db.UniqueConstraint(time_visitante_id, time_mandante_id)
+    
+    
     mandante = db.relationship('Time', foreign_keys=[time_mandante_id],
                                backref=db.backref('jogos_mandante'))
     visitante = db.relationship('Time', foreign_keys=[time_visitante_id],
@@ -31,5 +33,5 @@ class Jogo(db.Model):
         return jogos
 
     def __repr__(self):
-        return f'<Jogo: {self.mandante} {self.gols_mandante} x' \
+        return f'<Jogo: {self.mandante} {self.gols_mandante} x ' \
             f'{self.gols_visitante} {self.visitante}>'

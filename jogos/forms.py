@@ -13,7 +13,7 @@ class NovoJogoForm(FlaskForm):
     gols_mandante = IntegerField('Gols')
     amarelos_mandante = IntegerField('Amarelos', default=0)
     visitante = SelectField('Time Visitante', coerce=int)
-    gols_visitante = IntegerField('Gol')
+    gols_visitante = IntegerField('Gols')
     amarelos_visitante = IntegerField('Amarelos', default=0)
     vermelhos_visitante = IntegerField('Vermelhos', default=0)
     enviar = SubmitField('Enviar')
