@@ -5,30 +5,37 @@
 <br>
 <br>
 <table class="table table-striped">
-  <thead class="thead-dark">
-    <tr>
-      <th>RODADA</th>
-      <th>TIME MANDANTE</th>
-      <th>GOLS</th>
-      <th>X</th>
-      <th>GOLS</th>
-      <th>TIME VISITANTE</th>
+  <thead>
+      <tr>
+          <th>Rodada</th>
+          <th>Data</th>
+          <th>Mandante</th>
+          <th>Gols</th>
+          <th>X</th>
+          <th>Gols</th>
+          <th>Visitante</th>
     </tr>
-  </thead>  
-  <tbody> 
-    {% for time in times %}
-    {% for jogo in jogos %}
-    <tr>
-      <td>{{ Jogos.time.RODADA }}</td>
-      <td>{{ Jogos.time.time_mandante_id }}</td>
-      <td>{{ Jogos.time.gols_mandante }}</td>
-      <td>X</td>
-      <td>{{ Jogos.time.gols_visitante }}</td>
-      <td>{{ Jogos.time.time_visitante_id }}</td>
+  </thead>
+    <tbody>  
+  <tbody>
+    {% for rodada in jogos %}
+    {% for jogo in jogos[rodada] %}
+        <tr>
+            <th>{{rodada}}</th>
+            <th>{{jogo.data.strftime('%d/%m/%Y') }}</th>
+            <th>{{jogo.mandante.nome}}</th>
+            <th>{{jogo.gols_mandante}}</th>
+            <th>X</th>
+            <th>{{jogo.gols_visitante}}</th>
+            <th>{{jogo.visitante.nome}}</th>
+            <th><a href="{{ url_for('jogos.update', id=jogo.id) }}" class="btn btn-default">editar</a></th>
+            <th><a href="{{ url_for('jogos.delete', id=jogo.id) }}" class="btn btn-default">deletar</a></th>
     </tr>
-  </tbody>
-  {% endfor %}  
-  {% endfor %} 
+    {% endfor %}
+    {% endfor %} 
+    <tbody>     
 </table>
 
 {% endblock %}
+
+  

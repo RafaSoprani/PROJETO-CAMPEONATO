@@ -4,7 +4,6 @@
 <table class="table table-striped">
 	<thead>
 		<tr>
-			<th></th>
 			<th>Time</th>
 			<th>Pontos</th>
 			<th>Jogos</th>
@@ -21,7 +20,6 @@
 	<tbody>
 		{% for time in times %}
 		<tr>
-			<td><img class="escudo-mini" src="{{ time.escudo }}"></td>
 			<td>{{time.nome}}</td>
 			<td>{{time.pontos}}</td>
 			<td>{{time.jogos|length}}</td>
