@@ -7,9 +7,10 @@ from config import Config
 # Faculdade Imapcta Tecnologia
 # Tecnologia Web 02/2020 - ADS/BD
 # Grupo XX:
-# nome.sobrenome@aluno.faculdadeimpacta.com.br
-# nome.sobrenome@aluno.faculdadeimpacta.com.br
-# nome.sobrenome@aluno.faculdadeimpacta.com.br
+# guilherme.brant@aluno.faculdadeimpacta.com.br
+# joao.ribeiro@aluno.faculdadeimpacta.com.br
+# osmir.silva@aluno.faculdadeimpacta.com.br
+# rafael.soprani@aluno.faculdadeimpacta.com.br
 
 app = Flask(__name__)
 app.config.from_object(Config)
