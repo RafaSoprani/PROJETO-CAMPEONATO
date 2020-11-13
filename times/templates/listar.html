@@ -11,8 +11,8 @@
 		 <li class="list-group-item col-md-4 borderless text-center">
 			<img class="escudo-mini" src="{{ time.escudo }}"> 
 			{{ time.nome }}
-             <a href="{{ url_for('times.update', id=time.id) }}">edit</a>
-             <a href="{{ url_for('times.delete', id=time.id) }}">delete</a>
+             <a href="{{ url_for('times.update', id=time.id) }}">editar</a>
+             <a href="{{ url_for('times.delete', id=time.id) }}">deletar</a>
 		 </li>
 		{% endfor %}
 	</ul>
