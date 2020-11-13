@@ -27,4 +27,6 @@ a > li{
     margin: 1em auto;
 }
 
-
+th{
+    text-align: center;
+}
