@@ -1,10 +1,13 @@
 {% extends "base.html"%}
+{% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
+
 <a href="{{ url_for('jogos.create') }}" class="btn btn-default">Novo Jogo</a>
 <br>
 <br>
-<table class="table table-striped">
+
+<table class="table table-striped text-center">
   <thead>
       <tr>
           <th>Rodada</th>
@@ -15,8 +18,7 @@
           <th>Gols</th>
           <th>Visitante</th>
     </tr>
-  </thead>
-    <tbody>  
+  </thead>    
   <tbody>
     {% for rodada in jogos %}
     {% for jogo in jogos[rodada] %}
@@ -30,7 +32,7 @@
             <th>{{jogo.visitante.nome}}</th>
             <th><a href="{{ url_for('jogos.update', id=jogo.id) }}" class="btn btn-default">editar</a></th>
             <th><a href="{{ url_for('jogos.delete', id=jogo.id) }}" class="btn btn-default">deletar</a></th>
-    </tr>
+        </tr>
     {% endfor %}
     {% endfor %} 
     <tbody>     

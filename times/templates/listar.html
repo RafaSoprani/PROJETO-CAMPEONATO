@@ -1,4 +1,5 @@
 {% extends "base.html"%}
+{% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
 
@@ -8,11 +9,11 @@
 <div class="container">
 	<ul class="list-unstyled row">
 		{% for time in times %}
-		 <li class="list-group-item col-md-4 borderless text-center">
+		 <li class="list-group-item col-md-4 borderless text-left">
 			<img class="escudo-mini" src="{{ time.escudo }}"> 
-			{{ time.nome }}
-             <a href="{{ url_for('times.update', id=time.id) }}">editar</a>
-             <a href="{{ url_for('times.delete', id=time.id) }}">deletar</a>
+			{{ time.nome }}<br>
+             <a href="{{ url_for('times.update', id=time.id) }}">Editar </a><br>
+             <a href="{{ url_for('times.delete', id=time.id) }}">Deletar</a>
 		 </li>
 		{% endfor %}
 	</ul>
